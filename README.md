@@ -1,4 +1,4 @@
-# cuda_square_matrix_mul
+# cuda_square_matrix_mul_tiling
 A small cuda c++ program for square matrix multiplication using shared memory tiling, based on the [ORLC cuda training series](https://github.com/olcf/cuda-training-series/tree/master/exercises/hw2).
 
 ---
