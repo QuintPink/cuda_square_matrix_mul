@@ -24,10 +24,10 @@ Banks are filled such that each successive 4-byte word belongs to a different ba
 If you don't understand, it helps to visualise the process of "assigning" logical memory words to banks. Slides of the [the fourth episode of the cuda training series given by Robert Crovella] show this: 
 
 without padding:
-![][./zero-padding-bank-assignment.png]
+![image][./zero-padding-bank-assignment.png]
 
 with padding:
-![][./1-padding-bank-assignment.png]
+![image][./1-padding-bank-assignment.png]
 
 ### Other findings
 #### IDs of consecutive threads in a warp
