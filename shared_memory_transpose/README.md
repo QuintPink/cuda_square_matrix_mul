@@ -21,13 +21,13 @@ Another big hit in performance comes from the nature of matrix transposition. Tr
 
 Banks are filled such that each successive 4-byte word belongs to a different bank. Since the tile size is 32 and there are 32 banks, we have that threads reading from the same column leads to them accessing the same bank, aka we have (32-way) bank conflicts (which is the worst case in terms of bank conflicts). To solve this, we need to make sure that elements of a column are not stored in the same bank (and not somehow make elements in a row be in the same bank). As the blog explains, one can just increase the row size of the tile by 1. The 33th element of each row is never accessed but we get the benefit of having different banks for each element in a column. This is called "padding".
 
-If you don't understand, it helps to visualise the process of "assigning" logical memory words to banks. Slides of the [the fourth episode of the cuda training series given by Robert Crovella] show this: 
+If you don't understand, it helps to visualise the process of "assigning" logical memory words to banks. Slides of the [the fourth episode of the cuda training series given by Robert Crovella](https://youtu.be/Uz3r_OGQaxc?si=M9dq3lIM-R8cNt4H) show this: 
 
 without padding:
-![image][./zero-padding-bank-assignment.png]
+![image](./zero-padding-bank-assignment.png)
 
 with padding:
-![image][./1-padding-bank-assignment.png]
+![image](./1-padding-bank-assignment.png)
 
 ### Other findings
 #### IDs of consecutive threads in a warp
